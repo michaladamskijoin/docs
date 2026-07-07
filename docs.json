@@ -1,106 +1,48 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Join",
-  "theme": "luma",
+  "name": "Docs",
+  "theme": "mint",
   "colors": {
-    "primary": "#1c1c1c"
-  },
-  "logo": {
-    "light": "https://media.brand.dev/f38d4af9-4ff6-428f-800c-b3cc8d4426ff.svg",
-    "dark": "https://media.brand.dev/f38d4af9-4ff6-428f-800c-b3cc8d4426ff.svg"
-  },
-  
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Start Free Trial",
-      "href": "https://join-staging.com/auth/signup/company"
-    }
+    "primary": "#16A34A",
+    "light": "#4ADE80",
+    "dark": "#166534"
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Getting Started",
+        "tab": "Guides",
         "groups": [
           {
-            "group": "Overview",
+            "group": "Get started",
             "pages": [
-              "introduction",
-              "quickstart",
-              "pricing-plans"
-            ]
-          },
-          {
-            "group": "Account Setup",
-            "pages": [
-              "setup/create-account",
-              "setup/invite-team",
-              "setup/careers-page"
+              "index",
+              "quickstart"
             ]
           }
         ]
       },
       {
-        "tab": "Features",
+        "tab": "API reference",
         "groups": [
           {
-            "group": "Sourcing",
+            "group": "API reference",
             "pages": [
-              "features/multiposting",
-              "features/job-description-generator",
-              "features/sourcing-extension",
-              "features/talent-pools"
+              "api-reference/introduction"
             ]
           },
           {
-            "group": "Pipeline & Evaluation",
-            "pages": [
-              "features/pipeline",
-              "features/screening",
-              "features/scheduling",
-              "features/scorecards",
-              "features/offer-management"
-            ]
-          },
-          {
-            "group": "Collaboration",
-            "pages": [
-              "features/candidate-communication",
-              "features/notes",
-              "features/roles-permissions"
-            ]
-          },
-          {
-            "group": "Automation & Analytics",
-            "pages": [
-              "features/recruitment-automation",
-              "features/recruiting-analytics"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Integrations & API",
-        "groups": [
-          {
-            "group": "Integrations",
-            "pages": [
-              "integrations/overview",
-              "integrations/zapier-make",
-              "integrations/calendar-sync"
-            ]
-          },
-          {
-            "group": "API",
-            "pages": [
-              "api/overview",
-              "api/authentication",
-              "api/candidates",
-              "api/jobs"
-            ]
+            "group": "Endpoints",
+            "openapi": "api-reference/openapi.json"
           }
         ]
       }
     ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.example.com"
+    }
   }
 }

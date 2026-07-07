@@ -1,66 +1,34 @@
 ---
-title: "Get Started with Join: From Sign-Up to Live Job Ad"
-sidebarTitle: "Quick Start"
-description: "Learn how to create your Join account, set up your company profile, write a job ad, publish to job boards, and invite your hiring team."
+title: "Quickstart"
+description: "Run the docs locally and make your first edit."
 ---
 
-This guide walks you through everything you need to go from a blank account to a live job posting on multiple boards. By the end, you'll have a published job ad, a configured company profile, and your hiring team ready to collaborate — all in under 10 minutes.
+## Install the CLI
 
-<Note>
-  The 14-day trial gives you full access to the Advanced plan features, including API access and custom screening questions.
-</Note>
+```bash
+npm i -g mint
+```
+
+## Run locally
+
+From the folder that contains `docs.json`:
+
+```bash
+mint dev
+```
+
+Your preview is available at `http://localhost:3000`.
+
+## Make an edit
 
 <Steps>
-  <Step title="Create your account">
-    Go to [join.com](https://www.join.com) and click **Start Free Trial**. Enter your work email address and company details to create your account.
-
-    Your trial starts immediately on the **Advanced plan** for 14 days — no credit card required. You can post up to 5 active jobs during the trial and explore every feature before choosing a paid plan.
+  <Step title="Edit a page">
+    Open any `.mdx` file and change its content. The preview reloads automatically.
   </Step>
-
-  <Step title="Set up your company profile">
-    After logging in, navigate to **Settings → Company Profile**. Add your company logo, a short company description, and your brand colors to personalize your careers page.
-
-    This information also feeds the AI job description generator — the more context you provide about your company's culture and values, the more accurate and on-brand your generated job ads will be.
+  <Step title="Update navigation">
+    Add or reorder pages in the `navigation` section of `docs.json`.
   </Step>
-
-  <Step title="Create your first job">
-    From your dashboard, click **Create Job** and open the **AI Job Description Generator**. The wizard prompts you for the key details:
-
-    - **Location** — on-site, hybrid, or remote, and the city or region
-    - **Salary** — range or exact figure (optional but recommended)
-    - **Requirements** — must-have skills, experience level, and qualifications
-
-    Once you submit the wizard, Join drafts a complete, inclusive job ad with bias detection and keyword optimization applied automatically. Review each block, edit any section you want to adjust, and save when you're happy with the result.
-
-    <Tip>
-      The AI generator supports six languages: English, French, German, Spanish, Italian, and Dutch. Select your preferred language at the top of the wizard before generating.
-    </Tip>
-  </Step>
-
-  <Step title="Publish to job boards">
-    Open your saved job and click **Publish**. Select the organic job boards you want to target — your plan includes 10+ organic boards at no extra cost. Click **Publish** to go live; most boards show your posting within minutes.
-
-    To reach a larger audience, you can also add paid boards from the 250+ available in the marketplace. If you're on the Advanced plan, bring your own job-board contracts to activate negotiated rates directly inside Join.
-  </Step>
-
-  <Step title="Invite your hiring team">
-    Go to **Settings → Team** and enter the email addresses of your colleagues. Assign each person a **company role** that controls their access across all jobs:
-
-    | Role | Access level |
-    |---|---|
-    | **System admin** | Full account access, billing, and settings |
-    | **Standard** | Create and manage jobs; view all candidates |
-    | **Limited** | Access only to jobs they are explicitly assigned |
-
-    For each job, you can also assign **per-job roles** — Job admin, Hiring manager, or Reviewer — to give teammates the right level of involvement without granting broader account permissions.
+  <Step title="Publish">
+    Push to your default branch to deploy the changes.
   </Step>
 </Steps>
-
-## What's next?
-
-Now that your first job is live and your team is on board, explore these areas to get even more out of Join:
-
-- **Screening questions** — Add knockout questions to automatically filter out unqualified applicants and save your team time reviewing unsuitable applications.
-- **Interview scheduling** — Connect your Google Calendar or Outlook account and share a self-booking link with candidates so they can schedule interviews without any back-and-forth.
-- **Automation** — Open the visual workflow editor to build no-code hiring automations with conditional branching, so routine tasks like rejection emails and stage moves happen without manual effort.
-- **Talent pools** — Save strong candidates who aren't right for this role to a talent pool, with built-in consent management to stay GDPR-compliant.
