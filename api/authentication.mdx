@@ -1,7 +1,7 @@
 ---
-title: "Authenticate Requests to the Join REST API"
+title: "API Authentication: Generate and Use Your Join API Key"
 sidebarTitle: "Authentication"
-description: "Generate an API key in Join's settings and pass it as a Bearer token in the Authorization header on every API request."
+description: "Generate a Join API key in Settings, then pass it as a Bearer token in the Authorization header to authenticate every REST API request."
 ---
 
 Join uses API key authentication for all REST API requests. Every request you make must include your API key in the `Authorization` header as a Bearer token — requests without a valid key are rejected with a `401 Unauthorized` response.
@@ -10,7 +10,7 @@ Join uses API key authentication for all REST API requests. Every request you ma
 
 <Steps>
   <Step title="Log in to your Join workspace">
-    Open Join and sign in with your admin credentials.
+    Open Join and sign in to your workspace.
   </Step>
   <Step title="Go to Settings → Integrations → API">
     Navigate to **Settings** in the sidebar, select **Integrations**, then click **API**.

@@ -1,5 +1,5 @@
 ---
-title: "REST API Reference: Jobs Resource in Join"
+title: "Join REST API Jobs: List and Retrieve Job Posting Data"
 sidebarTitle: "Jobs"
 description: "Read job posting data from Join using the REST API. List active jobs, retrieve individual job details, and filter by status or team."
 ---
@@ -133,7 +133,7 @@ curl https://api.join.com/v1/jobs/job_abc123 \
 | `archived` | Closed; no longer counts toward your plan's active job limit |
 
 <Note>
-  Both `online` and `offline` jobs count toward your plan's active job limit. Archive a job to free up a slot.
+  `archived` jobs are closed and no longer counted as active. Use the `status` filter to exclude archived jobs when syncing open roles.
 </Note>
 
 <Tip>

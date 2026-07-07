@@ -9,7 +9,7 @@
     "light": "https://media.brand.dev/f38d4af9-4ff6-428f-800c-b3cc8d4426ff.svg",
     "dark": "https://media.brand.dev/f38d4af9-4ff6-428f-800c-b3cc8d4426ff.svg"
   },
-  "favicon": "/favicon.svg",
+  
   "navbar": {
     "primary": {
       "type": "button",

@@ -1,5 +1,5 @@
 ---
-title: "REST API Reference: Candidates Resource in Join"
+title: "Join REST API Candidates: List and Retrieve Applicant Data"
 sidebarTitle: "Candidates"
 description: "Read and export candidate data from Join using the REST API. List candidates, retrieve profiles, and filter by job, stage, or status."
 ---
@@ -119,9 +119,7 @@ curl https://api.join.com/v1/candidates/cand_01hx9z2k3m \
   "applied_at": "2024-06-10T09:14:00Z",
   "source": "linkedin",
   "cv_url": "https://files.join.com/cvs/cand_01hx9z2k3m.pdf",
-  "tags": ["senior", "remote-ok"],
-  "notes_count": 3,
-  "scorecards_count": 1
+  "tags": ["senior", "remote-ok"]
 }
 ```
 
@@ -144,8 +142,6 @@ curl https://api.join.com/v1/candidates/cand_01hx9z2k3m \
 | `source` | string | Originating job board or channel (e.g., `linkedin`, `join_job_board`, `referral`) |
 | `cv_url` | string | Signed URL to the candidate's CV file |
 | `tags` | array of strings | Tags applied to the candidate in Join |
-| `notes_count` | integer | Number of notes on the candidate profile |
-| `scorecards_count` | integer | Number of completed scorecards |
 
 <Note>
   The API returns only candidates for jobs your API key's account has access to, based on your roles and permissions settings.
