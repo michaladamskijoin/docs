@@ -1,0 +1,67 @@
+---
+title: "Authenticate Requests to the Join REST API"
+sidebarTitle: "Authentication"
+description: "Generate an API key in Join's settings and pass it as a Bearer token in the Authorization header on every API request."
+---
+
+Join uses API key authentication for all REST API requests. Every request you make must include your API key in the `Authorization` header as a Bearer token — requests without a valid key are rejected with a `401 Unauthorized` response.
+
+## Generate your API key
+
+<Steps>
+  <Step title="Log in to your Join workspace">
+    Open Join and sign in with your admin credentials.
+  </Step>
+  <Step title="Go to Settings → Integrations → API">
+    Navigate to **Settings** in the sidebar, select **Integrations**, then click **API**.
+  </Step>
+  <Step title="Click Generate API key">
+    Click the **Generate API key** button to create a new key for your workspace.
+  </Step>
+  <Step title="Copy the key immediately">
+    Join displays the full API key only once. Copy it now before closing or navigating away from the page.
+  </Step>
+  <Step title="Store it securely">
+    Save the key in a password manager or secrets vault (for example, 1Password, HashiCorp Vault, or AWS Secrets Manager). Do not store it in plain text or source code.
+  </Step>
+</Steps>
+
+## Authenticate requests
+
+Pass your API key as a Bearer token in the `Authorization` header on every request:
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+Here is a complete example using `curl`:
+
+```bash
+curl https://api.join.com/v1/candidates \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+Replace `YOUR_API_KEY` with the key you copied from **Settings → Integrations → API**.
+
+## Error responses
+
+Use the following table to diagnose authentication errors:
+
+| HTTP status | Meaning | What to do |
+|---|---|---|
+| `401 Unauthorized` | Missing or invalid API key | Check that the `Authorization` header is present and correctly formatted, then verify your key in **Settings → Integrations → API** |
+| `403 Forbidden` | Valid key but insufficient permissions | Confirm your plan includes API access (Advanced or Enterprise). Upgrade in **Settings → Billing** if needed |
+| `429 Too Many Requests` | Rate limit exceeded | Back off and retry after the number of seconds specified in the `Retry-After` response header |
+
+## Keep your key secure
+
+<Warning>
+  Never expose your API key in client-side code, public repositories, or browser requests. Treat it like a password. If a key is compromised, revoke it immediately in **Settings → Integrations → API** and generate a new one.
+</Warning>
+
+## Zapier and Make
+
+<Note>
+  Zapier and Make use the same API key for their connections to Join. If you revoke your key, both integrations will stop working until you reconnect them with the new key.
+</Note>

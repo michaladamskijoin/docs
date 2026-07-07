@@ -1,72 +1,106 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Join",
+  "theme": "luma",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    "primary": "#1c1c1c"
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "https://media.brand.dev/f38d4af9-4ff6-428f-800c-b3cc8d4426ff.svg",
+    "dark": "https://media.brand.dev/f38d4af9-4ff6-428f-800c-b3cc8d4426ff.svg"
   },
+  "favicon": "/favicon.svg",
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Start Free Trial",
+      "href": "https://join-staging.com/auth/signup/company"
     }
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "pricing-plans"
+            ]
+          },
+          {
+            "group": "Account Setup",
+            "pages": [
+              "setup/create-account",
+              "setup/invite-team",
+              "setup/careers-page"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Features",
+        "groups": [
+          {
+            "group": "Sourcing",
+            "pages": [
+              "features/multiposting",
+              "features/job-description-generator",
+              "features/sourcing-extension",
+              "features/talent-pools"
+            ]
+          },
+          {
+            "group": "Pipeline & Evaluation",
+            "pages": [
+              "features/pipeline",
+              "features/screening",
+              "features/scheduling",
+              "features/scorecards",
+              "features/offer-management"
+            ]
+          },
+          {
+            "group": "Collaboration",
+            "pages": [
+              "features/candidate-communication",
+              "features/notes",
+              "features/roles-permissions"
+            ]
+          },
+          {
+            "group": "Automation & Analytics",
+            "pages": [
+              "features/recruitment-automation",
+              "features/recruiting-analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations & API",
+        "groups": [
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/zapier-make",
+              "integrations/calendar-sync"
+            ]
+          },
+          {
+            "group": "API",
+            "pages": [
+              "api/overview",
+              "api/authentication",
+              "api/candidates",
+              "api/jobs"
+            ]
+          }
+        ]
+      }
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }

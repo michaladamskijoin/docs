@@ -1,0 +1,73 @@
+---
+title: "Screen Applicants Automatically with Knockout Questions"
+sidebarTitle: "Screening"
+description: "Add knockout questions to your application form to automatically filter out candidates who don't meet must-have requirements, with a full audit trail and one-click restore."
+---
+
+Application screening lets you attach questions directly to your job's application form. When a candidate's answer fails a non-negotiable requirement, Join rejects the application automatically — no manual triage needed. Every decision is logged, explainable, and reversible.
+
+## Question tiers
+
+Each screening question belongs to one of three tiers. The tier controls what Join does — or doesn't do — with the candidate's answer.
+
+| Tier | Behaviour | Use when |
+|---|---|---|
+| **Optional** | Candidate can skip; their answer has no consequence | You want the information but it's a nice-to-have |
+| **Required** | Candidate must answer to submit; the answer itself has no consequence | You need the information on record for every applicant |
+| **Knockout** | A failing answer automatically rejects the application the next day | The requirement is non-negotiable — no exceptions |
+
+## Supported question types
+
+Join supports seven question types. Five of them support Knockout logic; two do not.
+
+| Type | Knockout capable | Example use |
+|---|---|---|
+| **Boolean** | ✅ Yes | Work permit, on-site availability |
+| **Single-select** | ✅ Yes | Certification level |
+| **Multi-select** | ✅ Yes | Tools or skills check |
+| **Numeric** | ✅ Yes | Years of experience, salary expectation |
+| **Date** | ✅ Yes | Earliest start date, notice period end |
+| **Text** | ❌ No | Free-form cover note or motivation answer |
+| **File upload** | ❌ No | Portfolio link, certificate upload |
+
+Text and file upload questions cannot carry Knockout logic because their open-ended nature makes an automated pass/fail determination unreliable.
+
+## What happens when a candidate fails a knockout
+
+When an application contains a failing answer on a Knockout question, Join follows a fixed, auditable sequence:
+
+1. **The answer and the rule that triggered it are logged** on the candidate's profile immediately upon submission — you can see exactly what the candidate answered and which rule failed them.
+2. **The next day**, the candidate's stage moves to **Rejected** automatically.
+3. **A rejection email sends** to the candidate at the same time, using your configured rejection template for that stage.
+4. **Nothing is deleted.** The full application remains in Join. If the rejection was triggered in error, open the candidate profile and click **Restore** to reverse it in one click.
+
+<Note>
+  Custom screening questions require the Advanced or Enterprise plan. Standard includes a library of pre-defined question templates to get you started.
+</Note>
+
+<Info>
+  The audit trail on every knockout decision is GDPR-audit ready and meets the EU AI Act's human-oversight requirement for candidate decision systems.
+</Info>
+
+## Set up screening questions
+
+<Steps>
+  <Step title="Open the job's application form">
+    Navigate to the job and click the **Application form** tab.
+  </Step>
+  <Step title="Add a question">
+    Click **Add question** to open the question builder.
+  </Step>
+  <Step title="Choose a type and tier">
+    Select the question type (Boolean, Single-select, Numeric, etc.) and set the tier to Optional, Required, or Knockout.
+  </Step>
+  <Step title="Define the failing answer for Knockout questions">
+    If you set the tier to Knockout, specify what counts as a failing answer. For example:
+    - **Boolean** — set the failing answer to "No"
+    - **Numeric** — set the threshold to "less than 3"
+    - **Single-select** — select the option(s) that should trigger rejection
+  </Step>
+  <Step title="Save">
+    Click **Save**. Your questions apply to all new applications submitted for this job from this point forward.
+  </Step>
+</Steps>
