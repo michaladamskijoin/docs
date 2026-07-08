@@ -1,0 +1,29 @@
+---
+title: "API reference overview"
+description: "Example REST API documented from OpenAPI specs."
+---
+
+Endpoints below are generated from the OpenAPI specification for the selected
+version. Switch versions with the dropdown at the top of the sidebar.
+
+## Authentication
+
+All endpoints require a bearer token:
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+## Base URLs
+
+| Version | Base URL                      |
+| ------- | ----------------------------- |
+| v1      | `https://api.example.com/v1`  |
+| v2      | `https://api.example.com/v2`  |
+
+## What changed in v2
+
+- **Pagination** — `GET /items` accepts `limit` and `cursor` and returns
+  `{ data, nextCursor }`. See [Pagination](/v2/guides/pagination).
+- **Timestamps** — items include `createdAt` and `updatedAt`.
+- **Partial updates** — new `PATCH /items/{id}` endpoint.

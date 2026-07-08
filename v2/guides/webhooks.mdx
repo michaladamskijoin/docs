@@ -1,0 +1,44 @@
+---
+title: "Webhooks"
+description: "Receive real-time events when items change."
+---
+
+Webhooks let your app react to changes without polling. When a subscribed event
+occurs, the API sends an HTTP `POST` to your endpoint.
+
+## Register an endpoint
+
+```bash
+curl -X POST https://api.example.com/v1/webhooks \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://yourapp.com/webhooks",
+    "events": ["item.created", "item.deleted"]
+  }'
+```
+
+## Event payload
+
+```json
+{
+  "id": "evt_123",
+  "type": "item.created",
+  "createdAt": "2026-01-01T12:00:00Z",
+  "data": {
+    "id": "item_456",
+    "name": "My item"
+  }
+}
+```
+
+## Verify signatures
+
+Each delivery includes an `X-Signature` header — an HMAC-SHA256 of the raw body
+using your webhook secret. Reject any request whose computed signature does not
+match.
+
+<Note>
+  Respond with a `2xx` status within 5 seconds. Failed deliveries are retried
+  with exponential backoff for up to 24 hours.
+</Note>

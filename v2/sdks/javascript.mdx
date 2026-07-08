@@ -1,0 +1,28 @@
+---
+title: "JavaScript"
+description: "Use the Example API from JavaScript and TypeScript."
+---
+
+## Install
+
+```bash
+npm install @example/sdk
+```
+
+## Configure
+
+```javascript
+import { Example } from "@example/sdk";
+
+const client = new Example({ apiKey: process.env.EXAMPLE_API_KEY });
+```
+
+## Use it
+
+```javascript
+const items = await client.items.list();
+
+const item = await client.items.create({ name: "My item" });
+
+await client.items.delete(item.id);
+```

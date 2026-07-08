@@ -1,0 +1,38 @@
+---
+title: "Pagination"
+description: "Page through large collections with cursors."
+---
+
+List endpoints return results in pages. Pagination is **cursor-based** in
+[v2](/v2/api-reference/overview); v1 returns the full collection.
+
+## Request a page
+
+Use `limit` to set the page size and `cursor` to fetch the next page:
+
+```bash
+curl "https://api.example.com/v2/items?limit=20" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+## Response
+
+```json
+{
+  "data": [
+    { "id": "item_1", "name": "First" },
+    { "id": "item_2", "name": "Second" }
+  ],
+  "nextCursor": "eyJpZCI6Iml0ZW1fMiJ9"
+}
+```
+
+## Fetch the next page
+
+Pass `nextCursor` back as `cursor`. When `nextCursor` is `null`, you have
+reached the end.
+
+```bash
+curl "https://api.example.com/v2/items?limit=20&cursor=eyJpZCI6Iml0ZW1fMiJ9" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```

@@ -1,0 +1,28 @@
+---
+title: "Go"
+description: "Use the Example API v1 from Go."
+---
+
+## Install
+
+```bash
+go get github.com/example/example-go@v1
+```
+
+## Configure
+
+```go
+import "github.com/example/example-go"
+
+client := example.New(os.Getenv("EXAMPLE_API_KEY"), example.WithVersion("v1"))
+```
+
+## Use it
+
+```go
+items, err := client.Items.List(ctx)
+
+item, err := client.Items.Create(ctx, example.NewItem{Name: "My item"})
+
+err = client.Items.Delete(ctx, item.ID)
+```

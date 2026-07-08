@@ -1,0 +1,35 @@
+---
+title: "Rate limits"
+description: "Stay within request limits and handle throttling."
+---
+
+Requests are rate limited per API key. When you exceed the limit, the API
+returns `429 Too Many Requests`.
+
+## Limits
+
+| Plan       | Requests per minute |
+| ---------- | ------------------- |
+| Free       | 60                  |
+| Pro        | 600                 |
+| Enterprise | Custom              |
+
+## Response headers
+
+Every response includes your current usage:
+
+| Header                  | Description                                 |
+| ----------------------- | ------------------------------------------- |
+| `X-RateLimit-Limit`     | Maximum requests in the current window.     |
+| `X-RateLimit-Remaining` | Requests remaining in the current window.   |
+| `X-RateLimit-Reset`     | Unix timestamp when the window resets.      |
+
+## Handling `429`
+
+When throttled, wait for the number of seconds in the `Retry-After` header
+before retrying, and back off exponentially on repeated failures.
+
+```
+HTTP/1.1 429 Too Many Requests
+Retry-After: 12
+```

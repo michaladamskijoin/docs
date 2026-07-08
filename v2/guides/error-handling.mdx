@@ -1,0 +1,32 @@
+---
+title: "Error handling"
+description: "Understand error responses and status codes."
+---
+
+The API uses conventional HTTP status codes and returns a consistent JSON error
+body.
+
+## Error format
+
+```json
+{
+  "code": "not_found",
+  "message": "Item not found."
+}
+```
+
+## Status codes
+
+| Status | Code            | Meaning                                  |
+| ------ | --------------- | ---------------------------------------- |
+| `400`  | `bad_request`   | The request was malformed.               |
+| `401`  | `unauthorized`  | Missing or invalid API key.              |
+| `404`  | `not_found`     | The resource does not exist.             |
+| `429`  | `rate_limited`  | Too many requests — see [Rate limits](/v2/guides/rate-limits). |
+| `500`  | `server_error`  | Something went wrong on our end.         |
+
+## Recommended handling
+
+- Retry `429` and `5xx` responses with exponential backoff.
+- Do not retry `4xx` responses other than `429` — fix the request instead.
+- Log the `code` and `message` to aid debugging.

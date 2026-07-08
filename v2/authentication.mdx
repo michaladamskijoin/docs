@@ -1,0 +1,39 @@
+---
+title: "Authentication"
+description: "Authorize requests with a bearer token."
+---
+
+The Example API authenticates requests with an API key sent as a bearer token.
+
+## Create an API key
+
+1. Open your [dashboard](https://dashboard.example.com).
+2. Go to **Settings → API keys**.
+3. Click **Create key**, name it, and copy the value.
+
+<Warning>
+  Keys are shown only once. Store them in a secret manager — never commit them
+  to source control or expose them in client-side code.
+</Warning>
+
+## Authorize a request
+
+Send the key in the `Authorization` header on every request:
+
+```bash
+curl https://api.example.com/v1/items \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+## Errors
+
+A missing or invalid key returns `401 Unauthorized`:
+
+```json
+{
+  "code": "unauthorized",
+  "message": "Invalid API key."
+}
+```
+
+See [Error handling](/v2/guides/error-handling) for the full list of status codes.

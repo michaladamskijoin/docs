@@ -1,0 +1,29 @@
+---
+title: "Python"
+description: "Use the Example API v1 from Python."
+---
+
+## Install
+
+```bash
+pip install "example-sdk<2"
+```
+
+## Configure
+
+```python
+import os
+from example import Example
+
+client = Example(api_key=os.environ["EXAMPLE_API_KEY"], version="v1")
+```
+
+## Use it
+
+```python
+items = client.items.list()
+
+item = client.items.create(name="My item")
+
+client.items.delete(item.id)
+```

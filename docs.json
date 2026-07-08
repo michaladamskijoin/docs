@@ -8,35 +8,102 @@
     "dark": "#166534"
   },
   "navigation": {
-    "tabs": [
+    "versions": [
       {
-        "tab": "Guides",
-        "groups": [
+        "version": "v2",
+        "tabs": [
           {
-            "group": "Get started",
-            "pages": [
-              "index",
-              "quickstart"
+            "tab": "Documentation",
+            "groups": [
+              {
+                "group": "Get started",
+                "pages": [
+                  "v2/introduction",
+                  "v2/quickstart",
+                  "v2/authentication"
+                ]
+              },
+              {
+                "group": "Guides",
+                "pages": [
+                  "v2/guides/webhooks",
+                  "v2/guides/error-handling",
+                  "v2/guides/rate-limits",
+                  "v2/guides/pagination"
+                ]
+              },
+              {
+                "group": "SDKs",
+                "pages": [
+                  "v2/sdks/javascript",
+                  "v2/sdks/python",
+                  "v2/sdks/go"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API reference",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "v2/api-reference/overview"
+                ]
+              },
+              {
+                "group": "Endpoints",
+                "openapi": "v2/api-reference/openapi.json"
+              }
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "version": "v1",
+        "tabs": [
           {
-            "group": "Overview",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "Documentation",
+            "groups": [
+              {
+                "group": "Get started",
+                "pages": [
+                  "v1/introduction",
+                  "v1/quickstart",
+                  "v1/authentication"
+                ]
+              },
+              {
+                "group": "Guides",
+                "pages": [
+                  "v1/guides/error-handling",
+                  "v1/guides/rate-limits"
+                ]
+              },
+              {
+                "group": "SDKs",
+                "pages": [
+                  "v1/sdks/javascript",
+                  "v1/sdks/python",
+                  "v1/sdks/go"
+                ]
+              }
             ]
           },
           {
-            "group": "API v1",
-            "openapi": "api-reference/v1/openapi.json"
-          },
-          {
-            "group": "API v2",
-            "openapi": "api-reference/v2/openapi.json"
+            "tab": "API reference",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "v1/api-reference/overview"
+                ]
+              },
+              {
+                "group": "Endpoints",
+                "openapi": "v1/api-reference/openapi.json"
+              }
+            ]
           }
         ]
       }

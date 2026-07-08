@@ -1,0 +1,32 @@
+---
+title: "API reference overview"
+description: "Example REST API v1, documented from the OpenAPI spec."
+---
+
+Endpoints below are generated from the v1 OpenAPI specification.
+
+## Authentication
+
+All endpoints require a bearer token:
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+```
+
+## Base URL
+
+```
+https://api.example.com/v1
+```
+
+## Resources
+
+- `GET /items` — list all items (returns a JSON array).
+- `POST /items` — create an item.
+- `GET /items/{id}` — retrieve an item.
+- `DELETE /items/{id}` — delete an item.
+
+<Note>
+  Looking for pagination, timestamps, or partial updates (`PATCH`)? Those are
+  available in [v2](/v2/api-reference/overview).
+</Note>

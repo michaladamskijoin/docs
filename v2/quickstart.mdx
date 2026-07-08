@@ -1,0 +1,59 @@
+---
+title: "Quickstart"
+description: "Make your first request to the Example API."
+---
+
+## 1. Get an API key
+
+Create a key in your [dashboard](https://dashboard.example.com) under
+**Settings → API keys**. See [Authentication](/v2/authentication) for details.
+
+## 2. Make a request
+
+<CodeGroup>
+
+```bash cURL
+curl https://api.example.com/v1/items \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+```javascript JavaScript
+const res = await fetch("https://api.example.com/v1/items", {
+  headers: { Authorization: "Bearer YOUR_API_KEY" },
+});
+const items = await res.json();
+```
+
+```python Python
+import requests
+
+res = requests.get(
+    "https://api.example.com/v1/items",
+    headers={"Authorization": "Bearer YOUR_API_KEY"},
+)
+items = res.json()
+```
+
+</CodeGroup>
+
+## 3. Create an item
+
+```bash
+curl -X POST https://api.example.com/v1/items \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "My first item"}'
+```
+
+A successful request returns the created item with its generated `id`.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Handle errors" icon="triangle-exclamation" href="/v2/guides/error-handling">
+    Learn the error format and status codes.
+  </Card>
+  <Card title="Paginate results" icon="list" href="/v2/guides/pagination">
+    Page through large collections.
+  </Card>
+</CardGroup>
