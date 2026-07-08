@@ -3,9 +3,21 @@ title: "API reference"
 description: "Example REST API documented from an OpenAPI spec."
 ---
 
-This API reference is generated from the OpenAPI specification at
-`api-reference/openapi.json`. Each endpoint below is rendered automatically —
-edit the spec to change the docs.
+This API reference is generated from OpenAPI specifications. Each endpoint is
+rendered automatically — edit the spec to change the docs.
+
+## Versions
+
+<CardGroup cols={2}>
+  <Card title="API v1" icon="code-branch">
+    The base Items API — list, create, get, and delete items.
+    Spec: `api-reference/v1/openapi.json`
+  </Card>
+  <Card title="API v2" icon="code-branch">
+    Adds pagination, `createdAt`/`updatedAt` timestamps, and a `PATCH` update endpoint.
+    Spec: `api-reference/v2/openapi.json`
+  </Card>
+</CardGroup>
 
 ## Authentication
 

@@ -25,14 +25,18 @@
         "tab": "API reference",
         "groups": [
           {
-            "group": "API reference",
+            "group": "Overview",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
-            "group": "Endpoints",
-            "openapi": "api-reference/openapi.json"
+            "group": "API v1",
+            "openapi": "api-reference/v1/openapi.json"
+          },
+          {
+            "group": "API v2",
+            "openapi": "api-reference/v2/openapi.json"
           }
         ]
       }
